@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Focused Test</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.focused.js"></script>
+	<script type="text/javascript">
+	    $(function() {
+	        setInterval(function() {
+	            var focused_element = $.focused();
+	            $('#currentElement').text(focused_element ? focused_element.id : "N/A");
+	        }, 1000);
+	    });
+	</script>
+</head>
+
+<body>
+    <h1>Focused Test</h1>
+    <h2>Currently Focused Element</h2>
+    <p>Element is: <span id="currentElement">N/A</span> (updated every second).</p>
+    <ul>
+        <li>a: <a href="http://jquery.com" id="a">jQuery.com</a></li>
+        <li>b: <input id="b" /></li>
+        <li>c: <input id="c" /></li>
+        <li>d: <input id="d" /></li>
+        <li>e: <span id="e" tabindex="0">Focusable span</span></li>
+    </ul>
+
+
+</body>
+</html>
